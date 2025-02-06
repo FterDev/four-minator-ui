@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { MatButton } from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { ToolbarComponent } from "../../../components/toolbar/toolbar.component";
+
 
 @Component({
   selector: 'fm-landing',
-  imports: [MatCardModule, MatButton, MatToolbarModule],
+  imports: [MatCardModule, ToolbarComponent, ToolbarComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })
