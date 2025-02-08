@@ -17,3 +17,20 @@
   display: flex;
   align-items: center;
 }
+
+mat-toolbar>span>button
+{
+  width: 100px !important;
+}
+mat-toolbar>span
+{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+
+.fm-spacer
+{
+  flex-grow: 1;
+}
