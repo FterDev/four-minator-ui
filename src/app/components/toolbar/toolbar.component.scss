@@ -18,16 +18,19 @@
   align-items: center;
 }
 
-mat-toolbar>span>button
+.fm-session-object>button
 {
   width: 100px !important;
 }
-mat-toolbar>span
+.fm-session-object
 {
   display: flex;
   flex-direction: row;
   gap: 5px;
 }
+
+
+
 
 
 .fm-spacer
