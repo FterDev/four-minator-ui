@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserRegister } from '../../../interfaces/user-register';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldAppearance, MatFormFieldModule } from '@angular/material/form-field';
@@ -10,7 +10,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'fm-register',
-  imports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatCardModule, MatCheckboxModule, RouterLink],
+  imports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatCardModule, MatCheckboxModule, RouterLink, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrl: '../auth.scss'
 })
