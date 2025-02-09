@@ -1,0 +1,16 @@
+.fm-auth-actions
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  gap: 10px;
+}
+
+.fm-auth-link
+{
+  font-size: 0.8em;
+  color: #7178a3;
+  text-decoration: none;
+}

@@ -6,12 +6,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldAppearance, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'fm-register',
-  imports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatCardModule, MatCheckboxModule],
+  imports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatCardModule, MatCheckboxModule, RouterLink],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+  styleUrl: '../auth.scss'
 })
 export class RegisterComponent {
 
