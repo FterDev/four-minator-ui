@@ -4,16 +4,53 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 25px;
   gap: 10px;
+  margin: 15px 0px;
 }
 
 .fm-auth-link
 {
-  font-size: 0.8em;
+  font-size: 0.9em;
   color: #7178a3;
   text-decoration: none;
 }
+
+.fm-form-single-column
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  margin: 15px 0px;
+}
+
+.fm-form-single-column>mat-form-field
+{
+  width: 100%;
+}
+
+.fm-auth-card
+{
+  padding: 0px 20px;
+}
+
+.fm-auth-logo
+{
+  width: 75px;
+  height: 75px;
+  margin: 15px 0px;
+}
+
+.fm-auth-header
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 .fm-auth-main
 {

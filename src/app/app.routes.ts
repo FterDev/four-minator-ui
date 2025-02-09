@@ -8,7 +8,7 @@ export const routes: Routes = [
     { path: '', component: LandingComponent },
     { path: 'auth', component: AuthComponent, children: [
         { path: 'login', component: LoginComponent },
-        { path: 'register', component: RegisterComponent },
+        { path: 'register', component: RegisterComponent, title: 'Create Account' },
       ]
     }
 ];
