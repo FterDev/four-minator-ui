@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
 import { UserRegister } from '../../../interfaces/user-register';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldAppearance, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'fm-register',
-  imports: [],
+  imports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatCardModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
 
-  appearance = 'outline';
+  appearance: MatFormFieldAppearance = 'outline';
 
   user: UserRegister = {
     email: '',
