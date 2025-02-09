@@ -9,7 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'fm-register',
-  imports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatCardModule],
+  imports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatCardModule, MatCheckboxModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
