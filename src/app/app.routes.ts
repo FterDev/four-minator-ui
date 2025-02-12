@@ -6,9 +6,5 @@ import { AuthComponent } from './pages/auth/auth.component';
 
 export const routes: Routes = [
     { path: '', component: LandingComponent },
-    { path: 'auth', component: AuthComponent, children: [
-        { path: 'login', component: LoginComponent },
-        { path: 'register', component: RegisterComponent, title: 'Create Account' },
-      ]
-    }
+    { path: 'auth', loadChildren: () => import('./pages/auth/auth.routes').then(m => m.authRouters) }
 ];
