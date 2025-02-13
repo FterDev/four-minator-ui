@@ -1,0 +1,52 @@
+<mat-card class="fm-auth-card">
+  <mat-card-header class="fm-auth-header">
+    <img src="/fm-logo.svg" alt="4-MINATOR" class="fm-auth-logo" />
+    <label>Fill in the form to create an account.</label>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="registerForm"  class="fm-form-single-column">
+      <mat-form-field [appearance]="appearance">
+        <mat-label>Nickname</mat-label>
+        <input matInput type="text" formControlName="nickname" />
+        @if (registerForm.get('nickname')!.hasError('required')) {
+          <mat-error>Nickname is required.</mat-error>
+        }
+        @if (registerForm.get('nickname')!.hasError('minlength')) {
+          <mat-error>Nickname must contain at least 3 chars.</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field [appearance]="appearance">
+        <mat-label>E-Mail</mat-label>
+        <input matInput type="email" formControlName="email" />
+        @if (registerForm.get('email')!.hasError('required')) {
+          <mat-error>E-Mail is required.</mat-error>
+        }
+        @if (registerForm.get('email')!.hasError('email')) {
+          <mat-error>Invalid E-Mail format.</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field [appearance]="appearance">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        @if (registerForm.get('password')!.hasError('required')) {
+          <mat-error>Password is required.</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field [appearance]="appearance">
+        <mat-label>Confirm password</mat-label>
+        <input matInput type="password" formControlName="confirmPassword" />
+        @if (registerForm.get('confirmPassword')!.hasError('required')) {
+          <mat-error>Confirm password is required.</mat-error>
+        }
+      </mat-form-field>
+      <mat-checkbox formControlName="terms">
+        I accept the terms and conditions.
+      </mat-checkbox>
+      <div class="fm-auth-actions">
+        <button mat-flat-button color="primary" type="submit">Create</button>
+        <a routerLink="/auth/login" class="fm-auth-link">Already have an account?</a>
+        <a routerLink="/" class="fm-auth-link">Back to home</a>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
