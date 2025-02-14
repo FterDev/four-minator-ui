@@ -11,21 +11,21 @@ import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideRouter(routes), 
-    provideAnimationsAsync(), 
-    provideFirebaseApp(() => initializeApp({ 
-      projectId: environment.projectId, 
-      appId: environment.appId, 
-      storageBucket: environment.storageBucket, 
-      apiKey: environment.apiKey, 
-      authDomain: environment.authDomain, 
-      messagingSenderId: environment.messagingSenderId, 
-      measurementId: environment.measurementId 
-    })), 
-    provideAuth(() => getAuth()), 
-    provideAnalytics(() => getAnalytics()), 
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    provideFirebaseApp(() => initializeApp({
+      projectId: environment.projectId,
+      appId: environment.appId,
+      storageBucket: environment.storageBucket,
+      apiKey: environment.apiKey,
+      authDomain: environment.authDomain,
+      messagingSenderId: environment.messagingSenderId,
+      measurementId: environment.measurementId
+    })),
+    provideAuth(() => getAuth()),
+    provideAnalytics(() => getAnalytics()),
     ScreenTrackingService,
-    UserTrackingService, 
+    UserTrackingService,
     provideFirestore(() => getFirestore())]
 };
