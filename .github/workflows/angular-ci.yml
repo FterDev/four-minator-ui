@@ -25,6 +25,9 @@ jobs:
       env:
         ENVCONTENT: ${{ secrets.ENV_VARS }}
       run: |
+        mkdir /src/environments
+        touch /src/environments/environment.ts
+        touch /src/environments/environment.development.ts
         echo "$ENVCONTENT" > /src/environments/environment.ts
         echo "$ENVCONTENT" > /src/environments/environment.development.ts
 
