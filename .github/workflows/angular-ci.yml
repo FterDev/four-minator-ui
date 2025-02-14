@@ -5,7 +5,7 @@ name: Angular CI
 
 on:
   push:
-    branches: [ "dev, main" ]
+    branches: [ "dev", "main" ]
   pull_request:
     branches: [ "dev" ]
 
@@ -21,6 +21,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Create env files
+      env:
+        ENVCONTENT: ${{ secrets.ENV_VARS }}
+      run: |
+        mkdir src/environments
+        touch src/environments/environment.ts
+        touch src/environments/environment.development.ts
+        echo "$ENVCONTENT" > src/environments/environment.ts
+        echo "$ENVCONTENT" > src/environments/environment.development.ts
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
