@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Create env files
       env:
-        ENVCONTENT: ${{ secrets.ENVCONTENT }}
+        ENVCONTENT: ${{ secrets.ENV_VARS }}
       run: |
         echo "$ENVCONTENT" > .env /src/environments/environment.ts
         echo "$ENVCONTENT" > .env /src/environments/environment.development.ts
