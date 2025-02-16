@@ -15,11 +15,11 @@ describe('PasswordValidatorService', () => {
   });
 
   it('should validate passwords match', () => {
-    expect(service.validateMatch('password', 'password')).toBeTrue();
+    expect(service.validateMatch('password', 'password')).toBeNull();
   });
 
   it('should validate passwords do not match', () => {
-    expect(service.validateMatch('password', 'password1')).toBeFalse();
+    expect(service.validateMatch('password', 'password1')).toContain({name: 'mismatch', message: 'Passwords do not match.'});
   });
 
   it('should set options', () => {

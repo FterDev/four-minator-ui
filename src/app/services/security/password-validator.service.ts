@@ -30,8 +30,12 @@ export class PasswordValidatorService {
     this.special = special;
   }
 
-  public validateMatch(password: string, confirmPassword: string): boolean {
-    return password === confirmPassword;
+  public validateMatch(password: string, confirmPassword: string): Error[] | null {
+    const errors: Error[] = [];
+    if (password !== confirmPassword) {
+      errors.push(this.errors[5]);
+    }
+    return errors.length > 0 ? errors : null;
   }
 
   public validatePassword(password: string): Error[] | null {
