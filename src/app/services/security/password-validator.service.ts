@@ -34,4 +34,30 @@ export class PasswordValidatorService {
     return password === confirmPassword;
   }
 
+  public validatePassword(password: string): Error[] | null {
+    const errors: Error[] = [];
+
+    if (password.length < this.minLength) {
+      errors.push(this.errors[0]);
+    }
+
+    if (password.length > this.maxLength) {
+      errors.push(this.errors[1]);
+    }
+
+    if (this.lowerUpper && !/[a-z]/.test(password) || !/[A-Z]/.test(password)) {
+      errors.push(this.errors[2]);
+    }
+
+    if (this.number && !/\d/.test(password)) {
+      errors.push(this.errors[3]);
+    }
+
+    if (this.special && !/[!@#$%^&*äöüÄÖÜßéèêàç]/.test(password)) {
+      errors.push(this.errors[4]);
+    }
+
+    return errors.length > 0 ? errors : null;
+  }
+
 }
