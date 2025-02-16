@@ -1,1 +1,33 @@
-<p>login works!</p>
+<mat-card class="fm-auth-card">
+  <mat-card-header class="fm-auth-header">
+    <img src="/fm-logo.svg" alt="4-MINATOR" class="fm-auth-logo" />
+    <label>Fill in the form to login.</label>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="loginForm"  class="fm-form-single-column">
+      <mat-form-field [appearance]="appearance">
+        <mat-label>E-Mail</mat-label>
+        <input matInput type="email" formControlName="email" />
+        @if (loginForm.get('email')!.hasError('required')) {
+          <mat-error>E-Mail is required.</mat-error>
+        }
+        @if (loginForm.get('email')!.hasError('email')) {
+          <mat-error>Invalid E-Mail format.</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field [appearance]="appearance">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+        @if (loginForm.get('password')!.hasError('required')) {
+          <mat-error>Password is required.</mat-error>
+        }
+      </mat-form-field>
+      <div class="fm-auth-actions">
+        <button mat-flat-button color="primary" type="submit">Login</button>
+        <a routerLink="/auth/register" class="fm-auth-link">Don't have an account?</a>
+        <a routerLink="/auth/login" class="fm-auth-link">Forgot password?</a>
+        <a routerLink="/" class="fm-auth-link">Back to home</a>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
