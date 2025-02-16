@@ -8,6 +8,6 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './password-check-point.component.scss'
 })
 export class PasswordCheckPointComponent {
-  @Input() error!: boolean;
-  @Input() message!: string;
+  @Input({required:true}) error!: boolean;
+  @Input({required: true}) message!: string;
 }

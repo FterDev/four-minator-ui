@@ -47,7 +47,7 @@ describe('PasswordCheckPointComponent', () => {
     component.error = false;
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('p').textContent).toContain('test');
+    expect(compiled.textContent).toContain('test');
   });
 
   it('should display cancel icon on error', () => {

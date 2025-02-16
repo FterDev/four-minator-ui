@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { UserRegister } from '../../../interfaces/user-register';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { PasswordCheckComponent } from "../../../components/password-check/password-check.component";
+import { PasswordValidatorService } from '../../../services/security/password-validator.service';
 
 @Component({
   selector: 'fm-register',
@@ -38,6 +39,9 @@ export class RegisterComponent {
 
   registerForm: FormGroup;
 
+  errors : Error[] = [];
+  private passwordValidatorService = inject(PasswordValidatorService);
+
   constructor() {
     this.registerForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -46,6 +50,17 @@ export class RegisterComponent {
       confirmPassword: new FormControl('', [Validators.required]),
       terms: new FormControl('', [Validators.required]),
     });
+  }
+
+  onPasswordChange($event: Event) {
+    this.errors = [];
+    let eventValue = ($event.target as HTMLInputElement).value;
+
+    let res = this.passwordValidatorService.validatePassword(eventValue);
+    if(res)
+    {
+      this.errors = res;
+    }
   }
 
 }
