@@ -7,10 +7,20 @@ import { MatFormFieldAppearance, MatFormFieldModule } from '@angular/material/fo
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
+import { PasswordCheckComponent } from "../../../components/password-check/password-check.component";
 
 @Component({
   selector: 'fm-register',
-  imports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatCardModule, MatCheckboxModule, RouterLink, ReactiveFormsModule],
+  imports: [
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatCheckboxModule,
+    RouterLink,
+    ReactiveFormsModule,
+    PasswordCheckComponent],
   templateUrl: './register.component.html',
   styleUrl: '../auth.scss'
 })
