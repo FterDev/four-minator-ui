@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'fm-reset',
   imports: [],
   templateUrl: './reset.component.html',
-  styleUrl: './reset.component.scss'
+  styleUrl: '../auth.scss'
 })
 export class ResetComponent {
 

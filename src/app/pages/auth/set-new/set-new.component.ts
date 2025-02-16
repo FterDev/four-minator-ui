@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'fm-set-new',
   imports: [],
   templateUrl: './set-new.component.html',
-  styleUrl: './set-new.component.scss'
+  styleUrl: '../auth.scss'
 })
 export class SetNewComponent {
 

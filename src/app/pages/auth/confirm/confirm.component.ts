@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'fm-confirm',
   imports: [],
   templateUrl: './confirm.component.html',
-  styleUrl: './confirm.component.scss'
+  styleUrl: '../auth.scss'
 })
 export class ConfirmComponent {
 
