@@ -64,6 +64,7 @@ export class RegisterComponent {
     if(res)
     {
       this.errors = res;
+      this.errors.push({name: 'mismatch', message: 'Passwords do not match.'});
       return;
     }
     res = this.passwordValidatorService.validateMatch(password, this.registerForm.get('confirmPassword')?.getRawValue());
