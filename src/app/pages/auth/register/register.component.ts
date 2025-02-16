@@ -52,15 +52,27 @@ export class RegisterComponent {
     });
   }
 
-  onPasswordChange($event: Event) {
-    this.errors = [];
-    let eventValue = ($event.target as HTMLInputElement).value;
+  onPasswordChange() {
+    this.validatePassword(this.registerForm.get('password')?.getRawValue());
+  }
 
-    let res = this.passwordValidatorService.validatePassword(eventValue);
+
+  private validatePassword(password: string) {
+    this.errors = [];
+
+    let res = this.passwordValidatorService.validatePassword(password);
     if(res)
     {
       this.errors = res;
+      return;
+    }
+    res = this.passwordValidatorService.validateMatch(password, this.registerForm.get('confirmPassword')?.getRawValue());
+    if(res)
+    {
+      this.errors = res;
+      return;
     }
   }
+
 
 }

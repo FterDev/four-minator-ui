@@ -27,18 +27,17 @@
       </mat-form-field>
       <mat-form-field [appearance]="appearance">
         <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" (input)="onPasswordChange($event)" />
-        @if (registerForm.get('password')!.hasError('required')) {
-          <mat-error>Password is required.</mat-error>
-        }
+        <input matInput type="password" formControlName="password" (input)="onPasswordChange()" />
       </mat-form-field>
-      <fm-password-check [errors]="errors"></fm-password-check>
+      @if(
+        this.registerForm.get('password')!.touched && this.registerForm.get('password')!.dirty
+        || this.registerForm.get('confirmPassword')!.touched && this.registerForm.get('confirmPassword')!.dirty
+      ) {
+        <fm-password-check [errors]="errors"></fm-password-check>
+      }
       <mat-form-field [appearance]="appearance">
         <mat-label>Confirm password</mat-label>
-        <input matInput type="password" formControlName="confirmPassword" />
-        @if (registerForm.get('confirmPassword')!.hasError('required')) {
-          <mat-error>Confirm password is required.</mat-error>
-        }
+        <input matInput type="password" formControlName="confirmPassword" (input)="onPasswordChange()" />
       </mat-form-field>
       <mat-checkbox formControlName="terms">
         I accept the terms and conditions.
